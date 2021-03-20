@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>localStorage()</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<input type="checkbox" id="checkbox">Testami</button> 
+
+
+
+	<script>
+	
+	
+		document.getElementById("checkbox").onclick = function ()
+		{
+	
+	
+		/* 
+			Commenta questo blocco di istruzioni per testare il funzionamento del localStorage.
+			
+			Funzione simile al SESSION in PHP; se tu crei un certo valore resta salvato anche se chiudi pagina o simili.
+		*/
+			if(document.getElementById("checkbox").checked == true)
+			{
+				localStorage.setItem("darkMode", "on");
+				console.log('Scuro');
+			} else {
+				localStorage.setItem("darkMode", "off");
+				console.log('Chiaro');
+			}
+		/* --- */
+		
+		
+			if(localStorage.getItem("darkMode") == "on")
+			{
+				
+				console.log("Ancora scuro");
+			} else if (localStorage.getItem("darkMode") == "off")
+			{
+
+				console.log("Ancora chiaro");
+			}
+		}
+		
+		/*
+			Per salvare un contenuto dentro una key bisogna scrivere:	localStorage.setItem("key", "value");
+			
+			Per leggere il contenuto di una key bisogna scrivere:	localStorage.getItem("key");
+		
+			Per cancellare il contenuto di una key bisogna scrivere:	localStorage.removeItem("key");
+
+
+			Per più informazioni sul localStorage: https://www.w3schools.com/jsref/prop_win_localstorage.asp
+												   https://developer.mozilla.org/it/docs/Web/API/Window/localStorage
+			
+		*/
+	
+	</script>
+
+</body>
+</html>

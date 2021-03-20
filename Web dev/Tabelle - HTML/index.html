@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabelle - HTML</title>
+	<meta charset="utf-8">
+	
+	<style>
+		table {
+			width: 80%;
+			border: 1px solid black;
+			text-align: center;
+		}
+		
+		td {
+			background-color: gray;
+		}
+		
+	</style>
+</head>
+
+<body>
+	
+	
+	<table>
+		<tr>
+			<th>Header 1</th>
+			<th>Header 2</th>
+			<th>Header 3</th>
+		</tr>
+		
+		<tr>
+			<td>Riga 1 - Colonna 0</td>
+			<td rowspan="2" colspan="1">Riga 1 - Colonna 1</td>
+			<td>Riga 1 - Colonna 2</td>
+		</tr>
+		
+		<tr>
+			<td>Riga 2 - Colonna 0</td>
+			<!-- Row span 2 -->
+			<td>Riga 2 - Colonna 2</td>
+		</tr>
+		
+		<tr>
+			<td>Riga 3 - Colonna 0</td>
+			<td>Riga 3 - Colonna 1</td>
+			<td>Riga 3 - Colonna 2</td>
+		</tr>
+		
+	</table>
+	
+	
+</body>
+</html>
+
+<!-- 
+
+table: Tabella
+
+tr: Riga
+th: Header
+td: Elementi delle righe
+	rowspan: Quante righe occupa questa cella
+	colspan: Quante colonne occupa questa cella
+
+
+
+Links utili:
+
+https://www.w3schools.com/html/html_tables.asp
+https://www.w3schools.com/tags/tag_table.asp
+https://developer.mozilla.org/it/docs/Web/HTML/Element/table
+
+
+ -->

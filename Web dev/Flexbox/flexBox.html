@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test FlexBox</title>
+
+    <style>
+        #container {
+            display: flex;	/* Il container ha il display di tipo flex */
+            flex-wrap: wrap;	/* Questa istruzione permette di mandare a capo gli oggetti (riposizionarli) se non c'è spazio lungo la riga corrente */
+            width: 100%;
+            height: 800px;
+            background-color: aqua;
+			justify-content: center; /* Allinea i box centralmente in modo orizzontale */
+			align-items: center;/* Allineamento verticale */
+        }
+
+        .items {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="items">Box 1</div>
+        <div class="items">Box 2</div>
+        <div class="items">Box 3</div>
+        <div class="items">Box 4</div>
+        <div class="items">Box 5</div>
+        <div class="items">Box 6</div>
+		<div class="items">Box 7</div>
+		<div class="items">Box 8</div>
+		<div class="items">Box 9</div>
+		<div class="items">Box 10</div>
+		<div class="items">Box 11</div>		
+    </div>
+</body>
+</html>

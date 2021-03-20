@@ -1,0 +1,120 @@
+/*
+Questo permette di creare un div i cui elementi al suo interno saranno posizionati al
+centro (orizzontalmente e verticalmente).
+*/
+
+#menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80px;
+	height: 80px;
+	border: 5px solid black;
+	
+}
+
+/* Si crea la prima linea. Si usano i bordi perché rendere più semplice l'arrotondamento degli angoli. */
+
+#contenuto {
+	
+	width: 50px;
+	height: 6px;
+	background-color: black;
+	border-radius: 5px;
+	
+	transition: all .5s ease-in-out;	/* Maggiori informazioni sulle transizione a fine foglio */
+	
+	
+}
+
+/* 
+Pseudoclassi.
+
+::before inserisce qualcosa prima del div
+
+::after inserisce qualcosa dopo del div
+
+In questo caso il div ha una linea centrale e con il ::before si inserisce una linea prima del
+centro e con l'::after si inserisce una linea dopo del centro.
+
+
+*/
+
+
+#contenuto::before, #contenuto::after {
+	
+	content: "";
+	position: absolute;
+	width: 50px;
+	height: 6px;
+	background-color: black;
+	border-radius: 5px;
+	
+	transition: all .5s ease-in-out;
+	
+}
+
+
+#contenuto::before {
+	transform: translateY(-16px);
+}
+
+#contenuto::after {
+	transform: translateY(16px);
+}
+
+/* Animazione */
+
+/* Per animare una certa cosa ti basta scrivere:
+
+	#divPadre.classeAppenaAggiunta #divCheVuoiModificare
+
+
+*/
+
+#menu.animazione #contenuto {
+	
+	background-color: transparent;	/* Questo rende invisibile la linea centrale */
+	
+}
+
+#menu.animazione #contenuto::before {
+	
+	transform: rotate(45deg);	/* Ruota di 45° la prima linea */
+	
+}
+
+#menu.animazione #contenuto::after {
+	
+	transform: rotate(-45deg);	/* Ruota di 45° l'ultima linea */
+	
+}
+
+
+/*
+
+Velocità transazioni.
+
+Ci sono vari tipi di transizioni:
+
+linear: Velocità di transizione lineare
+ease: Inizio lento, poi veloce e alla fine lento
+ease-in: Inizio lento
+ease-out: Finale lento
+ease-in-out: Inizio e fine lenti
+cubic-bezier(n,n,n,n): Puoi modificare tu stesso i valori della velocità d'animazione
+
+
+Tipologie di tag:
+
+transition: Una proprietà abbreviata per impostare le quattro proprietà di transizione in una singola proprietà
+transition-delay: Specifica un ritardo (in secondi) per l'effetto di transizione
+transition-duration: Specifica quanti secondi o millisecondi occorrono per completare l'effetto di transizione
+transition-property: Specifica il nome della proprietà CSS per cui l'effetto di transizione è
+transition-timing-function: Specifica la curva di velocità dell'effetto di transizione
+
+
+
+Link di approfondimento: https://www.w3schools.com/css/css3_transitions.asp
+
+*/

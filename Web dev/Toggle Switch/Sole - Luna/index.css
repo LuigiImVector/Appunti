@@ -1,0 +1,58 @@
+/* Si imposta una larghezza e altezza di tutto il box */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+
+/* Si nasconde il checkbox */
+input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Si crea il rettangolo stondato che sarà lo sfondo del pulsante */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffc207;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+/* Il cerchio all'interno del pulsante */
+.slider:before {
+  content: '';
+  position: absolute;
+  height: 27px;
+  width: 27px;
+  left: 4px;
+  bottom: 4px;
+  /* Commenta questa riga per avere un effetto più semplice e (forse) più versatile per il responsive */
+  /*background-color: #ffc207;*/
+  /* --- */
+  
+  /* Commenta questa riga per avere un effetto più "completo" */
+  background-color: white;
+  transform: translateX(32px);
+  /* --- */
+  border-radius: 50%;
+  transition: .4s;
+}
+
+/* Cambia lo sfondo del pulsante */
+input:checked + .slider{
+  background-color: #2196F3;
+}
+
+/* Si sposta il cerchio bianco */
+input:checked + .slider:before {
+  transform: translateX(12px);
+  background-color: white;
+}

@@ -1,0 +1,31 @@
+body {
+	background-color: white;
+}
+
+h1 {
+	color: black;
+}
+
+div {
+	color: black;
+}
+
+label {
+	color: black;
+}
+
+body.darkMode {
+	background-color: #121212;
+}
+
+h1.darkMode {
+	color: white;
+}
+
+div.darkMode {
+	color: white;
+}
+
+label.darkMode {
+	color: white;
+}

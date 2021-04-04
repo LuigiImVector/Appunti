@@ -14,6 +14,9 @@ document.getElementById("checkbox").onclick = function ()
 		document.querySelectorAll(".switching").forEach(function (item, index) {
 			item.classList.add("darkMode");
 		});
+		
+		//Switch immagine
+		document.getElementById("logo").style.backgroundImage = "url('img/white.png')";
 	} else {
 		localStorage.setItem("darkMode", "off");
 		console.log('Chiaro');
@@ -21,6 +24,8 @@ document.getElementById("checkbox").onclick = function ()
 		document.querySelectorAll(".switching").forEach(function (item, index) {
 			item.classList.remove("darkMode");
 		});
+		
+		document.getElementById("logo").style.backgroundImage = "url('img/black.png')";
 	}
 
 }
@@ -30,6 +35,7 @@ window.onload = function ()
 	if(localStorage.getItem("darkMode") == "on")
 	{		
 		console.log("Ancora scuro");
+		document.getElementById("logo").style.backgroundImage = "url('img/white.png')";
 		//Non serve nessun classList.add in quanto la classe darkMode è messa ovunque di default
 	} else if (localStorage.getItem("darkMode") == "off")
 	{
@@ -44,5 +50,7 @@ window.onload = function ()
 		document.querySelectorAll(".switching").forEach(function (item, index) {
 			item.classList.remove("darkMode");
 		});
+		
+		document.getElementById("logo").style.backgroundImage = "url('img/black.png')";
 	}
 }

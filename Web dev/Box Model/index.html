@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>Box Model</title>
+		<meta charset="UTF-8" />
+		
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
+	
+	<body>
+	
+		<h1>Box Model</h1>
+		
+		<img src="img/box-model.png" alt="Immagine descrittiva dei box model" width="350px"/>
+	
+		<hr />
+		
+		<h2>Tipi di box</h2>
+		
+		<ul>
+			<li><strong>Block Box</strong>: sono quegli elementi che vengono "disegnati" sempre<br />
+			su una nuova riga, ovvero è possibile attribuirgli una grandezza.</li>
+			
+			<li><strong>Inline Box</strong>: influenzano un testo all'interno di una riga e non possono<br />
+			avere una dimensione. Solitamente sono quelli </li>
+		</ul>
+		
+		<p>
+			Solitamente <code>&lt;div&gt;</code> è di tipo Block, infatti può essergli attribuita facilmente <br />
+			una dimensione mentre il tag <code>&lt;span&gt;</code> viene usato principalmente per personalizzare <br />
+			parti di testo e non può avere una dimensione.<br /><br />
+			Ricordo che è possibile modificare il tipo di Box con la proprietà <code>display</code> da inserire come regola CSS.
+		</p>
+	
+		<hr />
+		
+		<h2>Content, Padding, Border, Margin</h2>
+		
+		<ul>
+			<li><strong>Content:</strong> è il contenuto (testo, immagine o media);</li>
+			<li><strong>Padding:</strong> è lo spazio tra il contenuto e il bordo;</li>
+			<li><strong>Border:</strong> è la linea (personalizzabile) tra il padding e il margin;</li> <!-- Bovdev -->
+			<li><strong>Margin:</strong> è lo spazio tra il bordo e il resto della pagina/l'ambiente circostante.</li>
+		</ul>
+		
+		<hr />
+		
+		<h2>Padding</h2>
+		
+		<p>
+			Come ho già detto il padding è lo spazio tra il contenuto e il bordo.<br />
+			Il padding ha sempre uno sfondo, è incluso nell'area di click, non soffre del <em>collapse vertically</em> e per aggiungere il padding ad un elemento ci sono tre modi:
+			
+			<ul>
+				<li><strong><code>padding: 10px;</code></strong><br />
+					Inserisce 10px di padding a tutti i lati.</li>
+				<li><strong><code>padding: 10px 15px;</code></strong><br />
+					Inserisce 10px di padding in alto e in basso.<br />
+					Inserisce 15px di padding a destra e sinistra.</li>
+				<li><strong><code>padding: 10px 3px 16px 8px;</code></strong> /* Top Right Bottom Left */<br />
+					Inserisce 10px di padding in alto.<br />
+					Inserisce 3px di padding a destra.<br />
+					Inserisce 16px di padding in basso.<br />
+					Inserisce 8px di padding a sinistra.<br /></li>
+			</ul>
+		</p>
+		
+		<hr />
+		
+		<h2>Border</h2>
+		
+		<p>
+			Il bordo si trova tra il padding e il margin.<br />
+			È possibile scegliere la grandezza, lo stile e il colore del bordo inserendo questa regola CSS:<br />
+			
+			<code>border: size style color;</code><br />
+			
+			La regola <code>border</code> inserisce lo stesso bordo a tutti i lati ma se vuoi modificare un solo lato devi utilizzare: <code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, <code>border-left</code>.
+		</p>
+		
+		<hr />
+		
+		<h2>Margin</h2>
+		
+		<p>
+			Il margin è lo spazio che si trova tra il bordo e il resto degli elementi/pagina però, a differenza del padding, non ha un colore di sfondo, lo spazio che crea è invisibile e <u>non</u> è incluso nell'area di click e <u>soffre</u> del <em>collapse vertically</em>.
+			
+			<h4>Margin ed inline elements</h4>
+			
+			Inserendo un margine in un elemento inline (strong, per esempio) il margin verrà visualizzato solo a destra e sinistra (ricorda che puoi usare la regola <code>display</code> per trasformare l'elemento in block o simili).<br />
+			
+			<img src="img/margin-inline.png" alt="Immagine descrittiva del collapse vertically con il margin su elementi inline" width="500px"/><br />
+			
+			Solo se usi il padding non avviene questo (il padding però nasconderà gli elementi).<br />
+			
+			<img src="img/padding-inline.png" alt="Immagine descrittiva del collapse vertically con il margin su elementi inline" width="500px"/><br />
+			
+			<h4>Vertical margin collapse</h4>
+			
+			Se ti trovi con due div (per esempio), uno sopra e uno sotto, quello sopra ha un <code>margin-bottom: 50px</code> mentre quello sotto ha <code>margin-top: 25px</code> per logica penseresti che tra i due div ci sarà un totale di 75px di spazio ma invece non è così.<br />
+			In casi come questo viene presa in considerazione solamente la grandezza più grande (in questo caso 50px) ignorando (collassando) quella più piccola (25px).<br />
+			
+			<img src="img/vertical-collapse.png" alt="Immagine descrittiva del vertical collapse del margin di due div" width="500px"/><br />
+			
+			<strong>Come fare ad evitare il collasso?</strong> "Semplice", ti basterà inserire un altro div fra i due con almeno 1px di altezza (per esempio <code>padding-top: 1px</code>.<br />
+			
+			<img src="img/prevent-collapse.png" alt="Immagine descrittiva per prevenire il margin collapse" width="250px"/><br />
+			
+			Questo è un piccolo trucco per evitare il collasso di uno dei due margini in quanto entrambi i div avranno una grandezza di margin maggiore rispetto al div in mezzo che ha un solo 1px di padding-top.<br />	
+		</p>
+		
+		<hr />
+		
+		<h2>Box Sizing</h2>
+		
+		<p>
+			Quando si crea un box e gli si aggiunge una larghezza (width), del padding e un bordo si può notare che la larghezza finale di tutto il box non corrisponde alla larghezza dichiara al contenuto ma è la somma del contenuto, del padding e del bordo; si ha quinti una regola del genere: <code>box-sizing: content-box;</code>.<br />
+			
+			<img src="img/content-box.png" alt="Immagine descrittiva della proprietà 'content-box'" width="350px"/><br />
+			
+			Se vuoi che la larghezza di tutto il box sia scelta da te devi utilizzare un'altra proprietà: <code>box-sizing: border-box;</code>.<br />
+			
+			<img src="img/border-box.png" alt="Immagine descrittiva della proprietà 'border-box'" width="350px"/><br />
+			
+			Esistono molte altre proprietà per la regola <code>box-sizing</code>, fatti un giro su <a href="https://www.w3schools.com/">W3Schools</a> oppure <a href="https://developer.mozilla.org/">MDN</a>.<br />
+		</p>
+	
+		<hr />
+		
+		<h2>Fine</h2>
+		
+		<p>
+			Per approfondire questo argomento clicca <a href="https://internetingishard.netlify.app/html-and-css/css-box-model/index.html">qui</a>.
+		</p>
+
+		<!-- © LuigiImVector - https://github.com/LuigiImVector -->
+	</body>
+</html>

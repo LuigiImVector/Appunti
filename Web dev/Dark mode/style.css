@@ -14,6 +14,14 @@ label {
 	color: black;
 }
 
+#logo {
+	width: 75px;
+	height: 75px;
+	background-image: url('img/black.png');
+	background-repeat:no-repeat;
+	background-size:contain;
+}
+
 body.darkMode {
 	background-color: #121212;
 }

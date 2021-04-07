@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>Selettori</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	
+	<body>
+		<h1>Selettori in CSS</h1>
+		
+		<p>
+			Per modificare un elemento HTML tramite CSS esistono 3 modi:
+			
+			<ul>
+				<li><strong>Metodo inline:</strong> all'elemento HTML si aggiunge l'attributo <code>style</code> e si scrivono le regole CSS;</li>
+				<li><strong>Tag Style:</strong> si scrivono le regole CSS aggiungendo il tag <code>&lt;style&gt;&lt;/style&gt;</code> nel tag <code>head</code>;</li>
+				<li><strong>File esterno:</strong> tramite il tag <code>link</code> situato all'interno dell'<code>head</code> si collega un file esterno di CSS al file corrente HTML.</li>
+			</ul>
+			
+			Per i metodi NON inline bisogna usare questi 3 selettori:
+			
+			<ul>
+				<li><strong>Classi:</strong> si inserisce come attributo nell'elemento (<code>class="nome_classe"</code>) e per modificare le regole stilistiche di questi elementi bisogna "richiamarli" con <code>.nome_classe</code>;</li>
+				<li><strong>ID:</strong> per modificare tramite gli id bisogna inserire questo attributo in UN SOLO elemento: <code>id="nome_id"</code>. Per selezionarli nel file CSS bisogna usare l'hashtag prima del nome dell'ID: <code>#nome_id</code>;</li>
+				<li><strong>Tipologia di elemento:</strong> non bisogna aggiungere nessun attributo e per modificare un gruppo di elementi uguali bisogna scrivere il tipo di tag che hanno: <code>p</code>, <code>h1</code> oppure <code>div</code>. Con questa tecnica si modificano tutti i tag dello stesso tipo; se si seleziona il tag p e si aggiunge la regola <code>color: red;</code> allora TUTTI i paragrafi della pagina avranno il testo di colore rosso (a meno che per qualche paragrafo non si vuole utilizzare un altro colore andando ad inserire un ID, una classe o un metodo inline (magari utilizzando anche <code>!important</code>).</li><br /><br />			
+			</ul>
+			<strong>Approfondimenti:</strong> <a href="https://internetingishard.netlify.app/html-and-css/css-selectors/index.html#modifying-class-styles" target="_blank">InternetingIsHard</a>.
+		</p>
+		
+		<hr />
+		
+		<h2>Descendant Selector (selettori discendenti)</h2>
+		
+		<p>
+			Se ti ritrovi con un paragrafo del genere:<br />
+			
+			<code>
+			&lt;p class="synopsis"&gt;<br />
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod &lt;em&gt;tempor&lt;/em&gt; incididunt ut labore et dolore magna aliqua.<br />
+			&lt;/p&gt;<br />
+			</code>
+			
+			E definisci questa regola CSS:<br />
+			
+			<code>
+			.synopsis {<br />
+				font-style: italic;<br />
+			}<br />
+			</code>
+			
+			Poi ti ritroveresti con tutto il paragrafo in corsivo invece della sola parola 'tempor'.<br />
+			Per ovviare a questo problema basta usare un selettore discendente:<br />
+			
+			<code>
+			.synopsis em {<br />
+				font-style: normal;<br />
+			}<br />
+			</code>
+			
+			Così facendo si aggiunge una regola speciale valida solo per i tag <code>em</code> che sono all'interno della classe <code>synopsis</code>.<br />
+			
+			<strong>N.B.</strong> Per selezionare un elemento figlio puoi anche utilizzare: <code>.synopsis > em</code>.<br /><br />
+			
+			<strong>Approfondimenti:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator" target="_blank">MDN</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator" target="_blank">MDN</a>, <a href="https://www.udemy.com/course/corso-completo-sviluppo-web-php-css-mysql-javascript-jquery-python-app/learn/lecture/5132904#announcements/4664878/" target="_blank">Udemy</a>, <a href=" https://internetingishard.netlify.app/html-and-css/css-selectors/index.html#descendant-selectors" target="_blank">InternetingIsHard</a>.<br />
+		</p>
+		
+		<hr />
+
+		<h2>Pseudo-Classi</h2>
+
+		<p>
+			Per fare delle piccole "animazioni" con CSS le pseudo-classi sono molto utili.
+			
+			Se per esempio vuoi far cambiare il colore di un pulsante quando passa il mouse sopra esso basta usare la pseudoclasse <code>hover</code>:<br />
+			
+			<code>
+			.button {<br />
+				background-color: red;<br />
+			}<br />
+				
+			.button:hover {<br />
+				background-color: blue;<br />
+			}<br />
+			</code>
+			
+			Così facendo quando il mouse passerà sopra il pulsante esso cambierà sfondo da rosso a blu. Per creare qualcosa di più carino puoi anche aggiungere la regola <code>transition</code>.<br />
+			
+			Altre pseudo-classi sono:
+			
+			<ul>
+				<li><code>:link</code>, un link mai visitato dall'utente;</li>
+				<li><code>:visited</code>, un link già visitato dall'utente;</li>
+				<li><code>:active</code>, un link che viene premuto;</li>
+				<li><code>:first-of-type</code>, il primo elemento della pagina (o di un div se si usano i selettori discendenti);</li>
+				<li><code>:last-of-type</code>, l'ultimo elemento della pagina (o di un div se si usano i selettori discendenti);</li>
+				<li><code>:nth-child(2n-1)</code>, prende solo alcune righe (in questo caso tutte quelle dispari);</li> <!-- n-esimo -->
+				<li><code>:not(.classe)</code>, se l'elemento non ha quella classe allora inserisce le regole definite;</li>
+				<li><code>first-letter</code>, modifica la prima lettera di qualcosa (un paragrafo per esempio);</li>
+				<li><code>[target]</code>, tutti i link che hanno l'attributo target;</li>
+				<li><code>[href="https://www.google.com"]</code>, tutti i link che hanno questo link;</li>
+				<li><code>[href*="google.com"]</code>, tutti i link che hanno nel link questo pezzo (non importa il resto del link, importa che ci sia google.com);</li>
+				<li><code>[href^="google.com"]</code>, tutti i link che iniziano con google.com;</li>
+				<li><code>[href$="google.com"]</code>, tutti i link che finiscono con google.com;</li>
+			</ul>
+			
+			
+			<strong>Approfondimenti:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN</a>, <a href="https://www.udemy.com/course/corso-completo-sviluppo-web-php-css-mysql-javascript-jquery-python-app/learn/lecture/5132908#announcements/4664878/" target="_blank">Udemy</a>, <a href="https://internetingishard.netlify.app/html-and-css/css-selectors/index.html#pseudo-classes-for-links" target="_blank">InternetingIsHard</a>, <a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">W3Schools</a>.<br />
+		</p>
+		
+		<hr />
+		
+		<h2>Fine</h2>
+		
+		<p>
+			Per approfondire tutto questo argomento clicca <a href="https://internetingishard.netlify.app/html-and-css/css-selectors/index.html">qui</a>.<br />
+		</p>
+
+		<!-- © LuigiImVector - https://github.com/LuigiImVector -->
+		
+		
+	</body>
+</html>

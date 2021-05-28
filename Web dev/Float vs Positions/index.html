@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>Float vs Position</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	
+	<body>
+	
+		<h1>Float vs Position</h1>
+		
+		
+		<hr />
+		
+		<h2>Float</h2>
+		
+		<p>
+			Il float è un qualcosa di fisico:<br />
+			Normalmente si ha un <b>Vertical Flow</b>, ovvero ogni blocco occupa tutta la linea orizzontale ma se si volesse cambiare questa cosa bisogna utilizzare il float.<br /><br />
+			Se per esempio vuoi inserire <b>un'immagine accanto ad un testo</b> come faresti? Potresti modificare la larghezza dell'immagine e del testo in modo che si adatti ma se l'immagine finisce e il testo continua manterrà sempre la larghezza che si era predisposta, <b>per far si che l'immagine sia parte integrante del testo e che quest'ultimo si adatti alla larghezza disponibile bisogna utilizzare il float</b>.
+		</p>
+		
+		<img src="img/example.png" alt="Esempio float" />
+		
+		<p>
+			<code>
+				.sidebar {
+					float: left;
+					width: 200px;
+					height: 300px;
+					background-color: #F09A9D;
+				}
+			</code>
+			
+			<br />
+			
+			<code>
+				.content {
+					height: 500px;
+					background-color: #F5CF8E;
+				}
+			</code>
+		</p>
+		
+		<h3>Clear</h3>
+		
+		<p>
+			Se vuoi che un elemento ignori tutte le regole float e che si posizioni direttamente in basso seguendo il flusso verticale devi usare il costrutto <code>clear</code> (both, left, right...).
+		</p>
+		
+		<img src="img/clear.png" alt="Esempio costrutto clear" />
+		
+		<hr />
+		
+		<h2>Position</h2>
+		
+		<p>
+			
+		</p>
+		
+		<hr />
+		
+		<h2>Fine</h2>
+		
+		<p>
+			Per approfondire tutto questo argomento clicca <a href="">qui</a>.<br />
+		</p>
+
+		<!-- © LuigiImVector - https://github.com/LuigiImVector -->
+		
+		<script src="script.js"></script>
+	</body>
+</html>

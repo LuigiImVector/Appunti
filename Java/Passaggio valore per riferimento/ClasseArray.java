@@ -1,7 +1,7 @@
 public class ClasseArray
 {
 	
-	public void genera (ClasseArray array[])
+	public void genera (ClasseMain array[])
 	{
 		int i=0;
 		
@@ -13,7 +13,7 @@ public class ClasseArray
 		}
 	}
 	
-	public void visualizza(ClasseArray array[])
+	public void visualizza(ClasseMain array[])
 	{
 		int i=0;
 		

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>Flexbox</title>
+		<meta charset="utf-8" />
+
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
+
+	<body>
+
+		<h1>Flexbox</h1>
+
+		<img src="img/introduction.png" alt="Introduzione ai flexbox" />
+
+		</p>
+			I flexbox servono per creare layout flessibili in modo veloce permettendoti di fare cose pazzesche in modo semplicissimo.<br />
+			&#10071; <b>Preferisci i flexbox rispetto ai float o position!</b>
+		<p>
+
+		<hr />
+
+		<h2>Allineamento verticale e orizzontale</h2>
+
+		<img src="img/align.png" alt="senti non ho voglia di scrivere, comprati degli occhi nuovi" />
+
+		<p>
+			justify-content:
+			<ul>
+				<li><code>center</code></li>
+				<li><code>flex-start</code></li>
+				<li><code>flex-end</code></li>
+				<li><code>space-around</code></li>
+				<li><code>space-between</code></li>
+			</ul>
+		</p>
+
+			<br/>
+
+		<p>
+			align-items:
+			<ul>
+				<li><code>center</code></li>
+				<li><code>flex-start</code> (in alto, in caso si lavora in orizzontale)</li>
+				<li><code>flex-end</code> (in alto, in caso si lavora in orizzontale)</li>
+				<li><code>stretch</code> (l'item si estenderà per tutta l'altezza del container)</li>
+				<li><code>baseline</code></li>
+			</ul>
+		</p>
+
+		<hr />
+
+		<h2><code>space-around</code> e <code>space-between</code></h2>
+
+		<img src="img/space.png" alt="Differenza tra space-around e space-between" />
+
+		<p>
+			Entrambi su utilizzano con la regola <code>justify-content</code>.<br /><br />
+			
+			<code>space-around</code>: consiste nell'inserire spazio equamente per tutti i lati degli items.<br />
+			<code>space-between</code>: consiste nell'inserire spazi equamente solamente in mezzo a tutti gli items.<br /><br />
+			
+			
+			Se vuoi allineare alcune cose a destra e altre a sinistra devi semplicemente <b>raggruppare alcuni items</b> e allinearli a destra (<code>justify-content: flex-end</code>).
+			
+		</p>
+		
+		<img src="img/grouped-items.png" alt="Grouped items" />
+		
+		<hr />
+
+		<h2>Flex-wrap</h2>
+
+		<img src="img/flex-wrap.png" alt="Flex wrapping e non" />
+
+		<p>
+			La regola del <code>flex-wrap</code> è semplicissima: se scrivi <code>flex-wrap: nowrap</code> gli items all'interno del container usciranno fuori se non avranno abbastanza spazio mentre se usi oppure la loro larghezza si restingerà per far stare tutti (quest'ultima ipotesi si verifica quando c'è solo un container flex e non un container flex che contiene il container, scusa per la confusione) <code>flex-wrap: wrap</code> allora gli items in più si posizioneranno sotto in modo da avere una grafica responsive.
+		</p>
+
+		<hr />
+
+		<h2>Flex-direction e order</h2>
+
+		<p>
+			La regola <code>flex-direction</code> serve a farti decidere come disporre gli items all'interno di un container, puoi disporli con uno schema a righe (<b>row</b>) oppure a colonne (<b>column</b>), se vuoi decidere quante colonne avere devi usare <code>column-count</code>.<br /><br />
+			
+			
+			Puoi anche decidere di ordinare gli items al contrario con <code>row-reverse</code> e <code>column-reverse</code> ma se vuoi invece sceglierlo tu l'ordine puoi utilizzare la regola <code>order</code> (devi inserirla nei singoli elementi).
+		</p>
+		
+		<hr />
+
+		<h2>Flex (grow - shrink - basis)</h2>
+		<code>flex: grow | shrink | basis</code><br /><br />
+		
+		<img src="img/flex.png" alt="Regola flex" />
+
+		<p>
+			Questo tipo di proprietà è utile per fare alcune animazioni carine, per esempio quando metti il mouse sopra un item esso si ingrandirà mentre gli altri si rimpiccioliranno [<a href="https://jonasreymondin.com/" target="_blank">jonasreymondin.com/</a>].<br /><br />
+			
+			<b>flex-grow</b>: la capacità di quell'elemento di ridimensionarsi <u>se necessario</u> (default value 1);<br />
+			<b>flex-shrink</b>: la capacità di quell'elemento di ridimensionarsi se il container è troppo piccolo (default value 1);<br />
+			<b>flex-basis</b>: la dimensione base dell'elemento (default value "auto" | si usano le unità di misura per le lunghezze [px...]).<br />
+		</p>
+
+		<hr />
+
+		<h2>Fine</h2>
+
+		<p>
+			Per approfondire tutto questo argomento clicca <a href="https://internetingishard.netlify.app/html-and-css/flexbox/index.html" target="_blank">qui</a> e <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">qui</a>.<br />
+		</p>
+
+		<!-- © LuigiImVector - https://github.com/LuigiImVector -->
+
+		<script src="script.js"></script>
+	</body>
+</html>

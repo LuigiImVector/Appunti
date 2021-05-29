@@ -14,7 +14,7 @@
 		
 		<hr />
 		
-		<h2>Float</h2>
+		<h2 class="important">Float</h2>
 		
 		<p>
 			Il float è un qualcosa di fisico:<br />
@@ -54,18 +54,65 @@
 		
 		<hr />
 		
-		<h2>Position</h2>
+		<h2 class="important">Position</h2>
 		
 		<p>
-			
+			Non so spiegarti bene il concencetto alla base della regola position ma tu leggi i prossimi tre sub-capitoli e capirai tutto.<br />
+			&#10071; <b>Gli elementi di tipo position non usano i margini ma le coordinate (top, right, bottom, left)!</b>
 		</p>
 		
+		<hr />
+
+		<h3>Relative</h3>
+		
+		<img src="img/relative.png" alt="Immagine illustrativa del position relative" />
+
+		<p>
+			Aggiungendo ad un elemento la regola <code>position: relative</code> potrai spostarlo dove vuoi utilizzando le coordinate (vedi paragrafo precedente) senza preoccuparti che gli altri elementi si spostino in quanto non lascia un vuoto, è come se effettivamente lui si trovasse ancora nella sua posizione originale.
+		</p>
+		
+		<hr />
+
+		<h3>Absolute</h3>
+		
+		<img src="img/absolute.png" alt="Immagine illustrativa del position absolute" />
+
+		<p>
+			Un elemento in <code>position: absolute</code> è come se non ci fosse, lui vola spensierato prendendo come punto di origine il punto (0;0) dell'intera pagina (in alto a sinistra) e quindi non occupa alcuno spazio all'interno del "flusso della pagina", come invece il position: relative faceva.<br /><br />
+			
+			<b>Come utilizzarlo in modo intelligente?</b><br />
+			Per <b>evitare di sfasare la posizione degli elementi circostanti</b> puoi creare un container "relative" e al suo interno inserisci l'elemento "absolute" OPPURE se vuoi avere come <b>origine il punto (0;0) di del container in cui si trova</b> basta definire quest'ultimo come <code>position: relative</code>.
+		</p>
+
+		<hr />
+
+		<h3>No scroll (Sticky e Fixed)</h3>
+
+		<p>
+			Questi due sono semplici, entrambi rimangono nella stessa posizione anche quando si scrolla la pagina (utile per fare navbar onnipresenti) l'unica differenza è che:<br />
+			
+			<ul>
+				<li><b>sticky</b> si comporta come un <code>position: relative</code> e quindi occupa uno spazio nel "flusso della pagina" non facendo sfasare la posizione degli elementi circostanti;
+				<li><b>fixed</b> si comporta come un <code>position: absolute</code> e quindi NON occupa uno spazio nel "flusso della pagina" facendo sfasare la posizione degli elementi circostanti.
+			</ul>
+		</p>
+		
+		<hr />
+
+		<h3>z-index</h3>
+		
+		<img src="img/z-index.png" alt="Immagine illustrativa del z-index" />
+
+		<p>
+			La regola <code>z-index</code> funziona SOLO con i position e serve a decidere, in caso di sovrapposizione di due o più elementi, chi deve stare sotto e chi sopra, creando una sottospecie di struttura 3D.
+		</p>
+
 		<hr />
 		
 		<h2>Fine</h2>
 		
 		<p>
-			Per approfondire tutto questo argomento clicca <a href="">qui</a>.<br />
+			Per approfondire tutto questo argomento clicca <a href="https://internetingishard.netlify.app/html-and-css/advanced-positioning/index.html" target="_blank">qui</a> e anche <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">qui</a>.<br />
 		</p>
 
 		<!-- © LuigiImVector - https://github.com/LuigiImVector -->

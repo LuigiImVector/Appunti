@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
-		<title>Titolo</title>
+		<title>Responsive page</title>
 		<meta charset="utf-8" />
 		
 		<link rel="stylesheet" type="text/css" href="styles.css" />
@@ -9,10 +9,154 @@
 	
 	<body>
 	
-		<h1>Titolo</h1>
+		<h1>Responsive page</h1>
 		
 		<p>
-			Descrizione
+			Raccoglierò qui tutte le informazioni e i consigli utili per creare una pagina web responsive. Potrebbe essere soggetta ad aggiornamenti futuri.
+		</p>
+		
+		<hr />
+
+		<h2>Breakpoint</h2>
+
+		<p>
+			I breakpoint sono servono a dire che regole CSS usare in base a delle caratteristiche specifiche (larghezza del dispositivo per esempio). Io solitamente uso quelli di <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/" target="_blank">Bootstrap</a> e da quanto ho capito <u>non è necessario creare dei @media query per supportare le risoluzioni più grandi</u>, spesso i contenuti vengono zoommati.
+		</p>
+		
+		<div class="content-box">
+@media (max-width: 575.98px)
+{
+	/* Regole */
+}
+
+@media (max-width: 767.98px)
+{
+	/* Regole */
+}
+
+@media (max-width: 991.98px)
+{
+	/* Regole */
+}
+
+@media (max-width: 1199.98px)
+{
+	/* Regole */
+}
+
+@media (max-width: 1399.98px)
+{
+	/* Regole */
+}
+		</div>
+		
+		<hr />
+
+		<h2>Unità di misura</h2>
+
+		<p>
+			Cerca di evitare di utilizzare delle dimensioni fisse ma piuttosto usa: <code>%, vmax, em, vh</code>.
+		</p>
+		
+		<hr />
+
+		<h2>Mobile first</h2>
+
+		<p>
+			Le interfacce per dispositivi mobile sono più semplici da fare e sempre più persone entrano in un sito da telefono piuttosto che da desktop e quindi <u>crea il sito iniziando da un dispositivo mobile per poi adattare il tutto al desktop</u>.<br /><br />
+			Dimensioni tipiche di un dispositivo mobile:<br />
+			<code>Prossimamente</code>
+		</p>
+		
+		<hr />
+
+		<h2>Immagini</h2>
+
+		<p>
+			È inutile far caricare immagini in 4k su uno smartphone, bastano delle immagini a media-bassa risoluzione, per fare lo swap di immagini automaticamente puoi il tag <code>picture</code>.
+		</p>
+		
+		<div class="content-box">
+&#60;picture&#62;
+	&#60;source media="(min-width:650px)" srcset="img_pink_flowers.jpg"&#62;
+	&#60;source media="(min-width:465px)" srcset="img_white_flower.jpg"&#62;
+	&#60;img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;"&#62;
+&#60;picture&#62;
+		</div>
+		
+		<p>
+			<b>Attenzione ai display a retina (es. telefoni)!</b> Nei telefoni spesso un pixel corrisponde a due o più pixel di un normale display e questo vuol dire che se sul pc va bene un'immagine 500x250 su un telefono 2x serve una risoluzione di 1000x500. La scelta migliore è quella di <b>usare immagini vettoriali</b> ma se non si può puoi sfruttare il tag <code>img</code> e l'attributo <code>srcset</code>:
+		</p>
+		
+		<div class="content-box">
+&#60;img src='illustration-small.png'&#62;
+	srcset='images/illustration-small.png 1x,
+	images/illustration-big.png 2x'
+&#60;style='max-width: 500px' /&#62;
+		</div>
+		
+		<p>oppure</p>
+		
+		<div class="content-box">
+&#60;img src='images/photo-small.jpg'&#62;
+	srcset='images/photo-big.jpg 2000w,
+		images/photo-small.jpg 1000w'
+	sizes='(min-width: 960px) 960px,
+		&#60;100vw' /&#62;
+		</div>
+		
+		<p>In questo caso per "2000w" si intende la dimensione in pixel della larghezza dello schermo.</p>
+		
+		<p>
+			Per approfondire i tag picture <a href="https://www.w3schools.com/tags/att_source_srcset.asp" target="_blank">clicca qua</a> mentre se vuoi provare a fare la stessa cosa ma usando il tag img <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank">clicca qua</a> e anche <a href="https://internetingishard.netlify.app/html-and-css/responsive-images/index.html" target="_blank">qui</a>.
+		</p>
+		
+		<hr />
+
+		<h2>Flexbox</h2>
+
+		<p>
+			I flexbox sono il futuro e tu devi usarli il più possibile, se non sai come fare ho scritto degli <a href="../Flexbox/index.html" target="_blank">appunti</a>.
+		</p>
+		
+		<hr />
+
+		<h2>Meta tag</h2>
+
+		<p>
+			Sarà chiaro, non ho capito molto di questo meta tag, le uniche cose che ho capito è che non è una cosa approvata da W3, serve per bloccare lo zoom nei dispositivi mobile ed evita problemi di responsive, tu inseriscilo sempre in caso. 
+		</p>
+		
+		<div class="content-box">
+&#60;meta name="viewport" content="width=device-width, initial-scale=1.0"&#62;
+		</div>
+		
+		<hr />
+
+		<h2>Se non è fluido va anche bene</h2>
+
+		<p>
+			Hai presente i siti potenti in cui tutto è "fluido"? Bene, fregatene se il tuo sito non è così, la cosa principale è che si veda bene ovunque.
+		</p>
+		
+		<hr />
+
+		<h2>Only screen...</h2>
+
+		<img src="img/media-type.png" alt="Struttura dei media query" />
+
+		<p>
+			Alcune volte puoi trovare scritto <code>@media screen and (max-width:632px)</code> oppure <code>@media only screen and (max-width:632px)</code> e vuol dire che quel media query si attiverà quando si utilizza (solo) uno schermo che deve avere una larghezza massima di 632px ma se vuoi <b>creare una pagina personalizzata quando si prova a stampare quest'ultima</b> allora devi usare "print" al posto o assieme a screen.
+			
+			Per saperne di più guarda la <a href="https://www.w3.org/TR/CSS2/media.html" target="_blank">documentazione ufficiale</a>.
+		</p>
+		
+		<hr />
+
+		<h2>Pesantezza del sito</h2>
+
+		<p>
+			Questo è la parte più inutile, sai cosa devi fare? Alleggerisci il più possibile il sito (sono un genio, ve?), i cellulari sono belli potenti ma non così tanto quanto un pc.
 		</p>
 		
 		<hr />
@@ -20,7 +164,7 @@
 		<h2>Fine</h2>
 		
 		<p>
-			Per approfondire tutto questo argomento clicca <a href="" target="_blank">qui</a> e anche <a href="" target="_blank">qui</a>.<br />
+			Per approfondire tutto questo argomento clicca <a href="https://web.dev/responsive-web-design-basics/" target="_blank">qui</a> e anche <a href="https://internetingishard.netlify.app/html-and-css/responsive-design/index.html" target="_blank">qui</a>.<br />
 		</p>
 
 		<!-- © LuigiImVector - https://github.com/LuigiImVector -->

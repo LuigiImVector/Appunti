@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Form and SQL</string>
-    <string name="title">Benvenuto</string>
-    <string name="description">Questa è un\'app per testare per cercare di utilizzare un database (SQLite) con Java su Android.</string>
-    <string name="hint_username">Inserisci l\'username</string>
-    <string name="hint_password">Inserisci la password</string>
-    <string name="submit">Invia</string>
-</resources>

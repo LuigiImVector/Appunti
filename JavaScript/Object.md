@@ -1,6 +1,6 @@
 # Object
 
-[[Object]] are similar to [[array]], except that instead of using indexes to access and modify their [[data]], you access the data in ojects through what are called [[properties]].
+[[Object]] are similar to [[array]], except that instead of using indexes to access and modify their [[Data masking]], you access the data in ojects through what are called [[properties]].
 
 ```js
 var cat = {

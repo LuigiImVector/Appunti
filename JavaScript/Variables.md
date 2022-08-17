@@ -2,7 +2,7 @@
 
 In [[JavaScript]] there are eight different [[data types]] which are: `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number`, and `object`.
 
-[[Variables]] allow [[computers]] to store and manipulate [[data]] in a [[dynamic fashion]]. They do this by using a *label* to point the data rather than using the data itself.
+[[Variables]] allow [[computers]] to store and manipulate [[Data masking]] in a [[dynamic fashion]]. They do this by using a *label* to point the data rather than using the data itself.
 
 To [[declare]] a variable you can use: `var`, `let` and `const`.
 

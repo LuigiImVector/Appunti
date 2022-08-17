@@ -1,6 +1,6 @@
 # Array
 
-With the [[array]] you can store several pieces of different [[data]] in one place.
+With the [[array]] you can store several pieces of different [[Data masking]] in one place.
 
 Different way to [[declare]] an array:
 ```javascript

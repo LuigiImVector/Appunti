@@ -12,7 +12,7 @@ if(condition) {
 }
 ```
 
-The **[[equality operator]]** (`==`) convert one type to another [[if]] the [[data]] it's different (ex. `2 == '2'`) and this is know as *[[Type Coercion]]*.
+The **[[equality operator]]** (`==`) convert one type to another [[if]] the [[Data masking]] it's different (ex. `2 == '2'`) and this is know as *[[Type Coercion]]*.
 
 The [[strict equality operator]] (`===`) doesn't covert the [[values]] if they are different (ex. `2 === '2' // output: false`).
 

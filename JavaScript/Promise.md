@@ -15,7 +15,7 @@ A promise has three states:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
-	if(condition) {
+  if(condition) {
     resolve("Promise was fulfilled");
   } else {
     reject("Promise was rejected");
